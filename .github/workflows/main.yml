@@ -39,7 +39,10 @@ jobs:
         generator: csharp-netcore
         # config-file: csharp-netcore-generator-config.yml
         openapi-file: apidocs/openapi.json
-    
+
+    - name: Zip SDK
+      run: zip -r gen-html/csharp-netcore-client.zip csharp-netcore-client
+
     #Using another action that takes generated HTML and pushes it to GH Pages
     - name: Deploy GH page (Events)
       uses: JamesIves/github-pages-deploy-action@3.4.2
