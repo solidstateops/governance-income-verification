@@ -1,4 +1,4 @@
-name: AsyncAPI documents processing
+name: Governance Document Processing
 
 on:
   push:
