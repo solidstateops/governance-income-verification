@@ -4,9 +4,6 @@ info:
   version: "1.0.0"
   description: |
     The Income Verification Governance asynchronously verifies income information and triggers an event when the processing is complete and reporting data is available.
-  license:
-    name: TBD
-    url: ""
 servers:
   eventgrid:
     url: https://dev-event-grid-test.westus2-1.eventgrid.azure.net/api/events
@@ -15,9 +12,32 @@ channels:
   IncomeVerificationStarted:
     publish:
       summary: Inform about the user choosing to begin an income verification operation for a specific claimant.
-      operationId: onIncomeVerificationStarted
       message:
         name: IncomeVerificationStarted
+        payload:
+          type: object
+          properties:
+            id:
+              type: string
+              description: Id of the message - should be unique for each message.
+            topic:
+              type: string
+              description: "Name of the topic (IncomeVerification)"
+            subject:
+              type: string
+              description: Reference to specific claimant info
+            eventTime:
+              type: string
+              format: date-time
+              description: Date and time when the message was sent.
+            dataVersion:
+              type: string
+              description: Semantic version of Income Verification Governance API
+  IncomeVerificationCompleted:
+    publish:
+      summary: Inform about the income verification operation being completed for a specific claimant.
+      message:
+        name: IncomeVerificationCompleted
         payload:
           type: object
           properties:
