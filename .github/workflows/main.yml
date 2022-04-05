@@ -25,12 +25,12 @@ jobs:
         template: '@asyncapi/html-template@0.9.0'  #In case of template from npm, because of @ it must be in quotes
         filepath: apidocs/events.yml
         parameters: baseHref=/test-experiment/ sidebarOrganization=byTags #space separated list of key/values
-        output: api-html
+        output: gen-html/events
       
     - name: Generate Swagger UI
       uses: Legion2/swagger-ui-action@v1
       with:
-        output: event-html
+        output: gen-html/api
         spec-file: apidocs/openapi.json
     
     #Using another action that takes generated HTML and pushes it to GH Pages
@@ -39,11 +39,4 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: event-html
-
-    - name: Deploy GH page (Swagger)
-      uses: JamesIves/github-pages-deploy-action@3.4.2
-      with:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: api-html
+        FOLDER: gen-html
