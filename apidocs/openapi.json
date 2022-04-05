@@ -1,0 +1,149 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "IncomeVerification.Service API",
+    "version": "v1"
+  },
+  "paths": {
+    "/IncomeVerificationJob": {
+      "post": {
+        "tags": ["IncomeVerification"],
+        "operationId": "IncomeVerification_CreateIncomeVerificationJob",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                  }
+                ],
+                "nullable": true,
+                "x-nullable": true
+              }
+            },
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                  }
+                ],
+                "nullable": true,
+                "x-nullable": true
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                  }
+                ],
+                "nullable": true,
+                "x-nullable": true
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                  }
+                ],
+                "nullable": true,
+                "x-nullable": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/IncomeVerificationJob/{jobId}/Report/Summary": {
+      "get": {
+        "tags": ["IncomeVerification"],
+        "operationId": "IncomeVerification_GetSummaryReport",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "x-nullable": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/IncomeVerificationJob/{jobId}/Report": {
+      "get": {
+        "tags": ["IncomeVerification"],
+        "operationId": "IncomeVerification_GetFullReport",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "x-nullable": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WriteIncomeVerificationJob": {
+        "type": "object",
+        "properties": {
+          "claimantSSN": {
+            "type": "string",
+            "nullable": true,
+            "x-nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "x-nullable": true
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://identity.dev.hi.solidstateops.com/connect/authorize",
+            "tokenUrl": "https://identity.dev.hi.solidstateops.com/connect/token",
+            "scopes": {
+              "api": "required"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": ["api1"]
+    }
+  ]
+}
