@@ -32,6 +32,13 @@ jobs:
       with:
         output: gen-html/api
         spec-file: apidocs/openapi.json
+
+    - name: Generate C# Client
+      uses: openapi-generators/openapitools-generator-action@v1
+      with:
+        generator: csharp-netcore
+        # config-file: csharp-netcore-generator-config.yml
+        openapi-file: apidocs/openapi.json
     
     #Using another action that takes generated HTML and pushes it to GH Pages
     - name: Deploy GH page (Events)
