@@ -1,6 +1,6 @@
 # Income Verification Governance
 
-#### The Income Verification Governance documents the API and Events by which income verification activities are programmatically conducted.
+The Income Verification Governance documents the API and Events by which income verification activities are programmatically conducted.
 
  - Interact with the [API](./api)
 
