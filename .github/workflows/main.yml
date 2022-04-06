@@ -24,7 +24,7 @@ jobs:
       with:
         template: '@asyncapi/html-template@0.9.0'  #In case of template from npm, because of @ it must be in quotes
         filepath: apidocs/events.yml
-        parameters: baseHref=/governance-income-verification/events/sidebarOrganization=byTags #space separated list of key/values
+        parameters: baseHref=/governance-income-verification/events/ sidebarOrganization=byTags #space separated list of key/values
         output: gen-html/events
       
     - name: Generate Swagger UI
