@@ -13,7 +13,7 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                   }
@@ -24,7 +24,7 @@
             },
             "application/json": {
               "schema": {
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                   }
@@ -35,7 +35,7 @@
             },
             "text/json": {
               "schema": {
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                   }
@@ -46,7 +46,7 @@
             },
             "application/*+json": {
               "schema": {
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                   }
