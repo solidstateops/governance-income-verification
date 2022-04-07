@@ -13,44 +13,28 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
-                  }
-                ],
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                 "nullable": true,
                 "x-nullable": true
               }
             },
             "application/json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
-                  }
-                ],
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob"
                 "nullable": true,
                 "x-nullable": true
               }
             },
             "text/json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
-                  }
-                ],
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob",
                 "nullable": true,
                 "x-nullable": true
               }
             },
             "application/*+json": {
               "schema": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/WriteIncomeVerificationJob"
-                  }
-                ],
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob",
                 "nullable": true,
                 "x-nullable": true
               }
