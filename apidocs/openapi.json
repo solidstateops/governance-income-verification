@@ -13,14 +13,14 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob",
                 "nullable": true,
                 "x-nullable": true
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WriteIncomeVerificationJob"
+                "$ref": "#/components/schemas/WriteIncomeVerificationJob",
                 "nullable": true,
                 "x-nullable": true
               }
