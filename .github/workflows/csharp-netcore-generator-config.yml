@@ -1,0 +1,3 @@
+apiName: IncomeVerification.Api
+targetFramework: net6.0
+packageName: IncomeVerification.SDK
