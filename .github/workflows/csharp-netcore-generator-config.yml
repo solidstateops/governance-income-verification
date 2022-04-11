@@ -1,2 +1,2 @@
 targetFramework: net6.0
-packageName: SolidStateOps.Service
+packageName: SolidStateOps.IncomeVerification.Service
