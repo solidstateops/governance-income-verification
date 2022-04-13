@@ -8,7 +8,7 @@
     "/IncomeVerificationJob": {
       "post": {
         "tags": ["IncomeVerification"],
-        "operationId": "IncomeVerification_CreateIncomeVerificationJob",
+        "operationId": "CreateIncomeVerificationJob",
         "requestBody": {
           "content": {
             "application/json-patch+json": {
@@ -51,7 +51,7 @@
     "/IncomeVerificationJob/{jobId}/Report/Summary": {
       "get": {
         "tags": ["IncomeVerification"],
-        "operationId": "IncomeVerification_GetSummaryReport",
+        "operationId": "GetSummaryReport",
         "parameters": [
           {
             "name": "jobId",
@@ -74,7 +74,7 @@
     "/IncomeVerificationJob/{jobId}/Report": {
       "get": {
         "tags": ["IncomeVerification"],
-        "operationId": "IncomeVerification_GetFullReport",
+        "operationId": "GetFullReport",
         "parameters": [
           {
             "name": "jobId",
